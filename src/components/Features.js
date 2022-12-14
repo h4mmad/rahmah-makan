@@ -5,7 +5,7 @@ const Features = () => {
                 {/* whats different */}
                 <div className="flex flex-col space-y-12 md:w-1/2">
                     <h2 className="max-w-md text-4xl font-bold text-center md:text-left">
-                        What's different about us?
+                        How can you help?
                     </h2>
                     <p className="max-w-sm text-center text-darkGrayishBlue md:text-left">
                         We strive to make sure no one sleeps hungry.

@@ -1,8 +1,11 @@
+import Team from "../components/Team";
+
 const AboutUs = () => {
     return(
-      <>
-        About us
-      </>  
+      <section>
+        <Team></Team>
+        
+      </section>
     );
 }
 
