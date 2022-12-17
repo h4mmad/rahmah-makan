@@ -1,8 +1,9 @@
 import MyButton from "./MyButton";
 import Pattern from "../images/pattern.svg";
 import Header from "./Header";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import GoogleIcon from "../images/google-icon.png";
+
 
 const Form = () => {
     return (
@@ -19,6 +20,7 @@ const Form = () => {
                 <Link className="bg- rounded-lg w-80 text-center p-2 mt-10 hover:bg-veryLightGray border border-darkGreen font-bold">
                     <img src={GoogleIcon}
                         className="inline mr-5 w-10"
+                        alt="google-icon"
                     />Continue with Google
                 </Link>
 
@@ -28,23 +30,11 @@ const Form = () => {
                     <div className="bg-darkGrayishBlue w-36 h-0.5"></div>
                 </div>
 
-                <form className="mt-5 flex flex-col items-start">
+
+                <Outlet />
 
 
-                    <label htmlFor="email" className="mt-5 text-sm">Email Address</label>
-                    <input type="email" className="border border-darkGreen w-80 p-2 rounded-lg" placeholder="Email" />
-
-                    <label htmlFor="email" className="mt-5 text-sm">Password</label>
-                    <input type="password" className="border border-darkGreen w-80 p-2 rounded-lg" placeholder="Password" />
-
-                    
-                    <Link className="p-3 text-white text-center px-6 pt-2 w-100 bg-darkGreen w-full rounded-lg mt-5">Log In</Link>
-                    
-
-                </form>
-
-
-                <p className="mt-10">Don't have an account? <Link className="font-bold text-darkGreen">Sign up</Link></p>
+                
 
 
             </div>

@@ -19,11 +19,11 @@ const Navbar = () => {
                 <div className="hidden space-x-6 md:flex">
                     <NavLink to="/" className=" hover:text-darkGrayishBlue">Home</NavLink>
                     <Link to="/about-us" className="hover:text-darkGrayishBlue">About us</Link>
-                    <Link to="/register" className="hover:text-darkGrayishBlue">Register</Link>
+                    <Link to="" className="hover:text-darkGrayishBlue">Register</Link>
                 </div>
 
 
-                <MyButton text="Sign Up" to="/register"/>
+                <MyButton text="Log In" to="/register/login"/>
 
 
             </div>
