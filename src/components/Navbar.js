@@ -20,8 +20,25 @@ const Navbar = () => {
                 </div>
 
 
-                <MyButton text="Log In" to="/register/login"/>
+                <MyButton text="Log In" to="/register/login" className="hidden md:block"/>
 
+                {/* Hamburger Icon */}
+                <button id="menu-btn"
+                    className="block hamburger md:hidden focus:outline-none">
+                    <span id="hamburger-top"></span>
+                    <span id="hamburger-middle"></span>
+                    <span id="hamburger-bottom"></span>
+                </button>
+
+
+            </div>
+
+            <div className="md:hidden">
+                <div className="flex flex-col items-center">
+                    <NavLink to="/" className=" hover:text-darkGrayishBlue">Home</NavLink>
+                    <NavLink to="/about-us" className="hover:text-darkGrayishBlue">About us</NavLink>
+                    <NavLink to="/register/login" className="hover:text-darkGrayishBlue">Login</NavLink>
+                </div>
             </div>
         </nav>
     );
