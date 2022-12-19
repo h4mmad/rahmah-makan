@@ -3,7 +3,6 @@ import MyButton from "./MyButton";
 
 
 const Navbar = () => {
-
     return (
         <nav className="relative container p-6 mx-auto">
             <div className="flex items-center justify-between">
@@ -14,20 +13,17 @@ const Navbar = () => {
                     <img src={Logo} className="w-36"></img>
                 </div> */}
 
-
                 <div className="hidden space-x-6 md:flex">
                     <NavLink to="/" className=" hover:text-darkGrayishBlue">Home</NavLink>
-                    <Link to="/about-us" className="hover:text-darkGrayishBlue">About us</Link>
-                    <Link to="" className="hover:text-darkGrayishBlue">Register</Link>
+                    <NavLink to="/about-us" className="hover:text-darkGrayishBlue">About us</NavLink>
+                    {/* <NavLink to="/" className="hover:text-darkGrayishBlue">Register</NavLink> */}
                 </div>
 
 
                 <MyButton text="Log In" to="/register/login"/>
 
-
             </div>
         </nav>
-
     );
 }
 
