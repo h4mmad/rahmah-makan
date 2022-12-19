@@ -1,8 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import MyButton from "./MyButton";
+import HamburgerIcon from "../images/hamburger.png";
+import { useState } from "react";
 
 
 const Navbar = () => {
+
+    const [hiddenClass, setHiddenClass] = useState("hidden");
+
+    function toggleMenu(e) {
+        e.preventDefault();
+        if (hiddenClass === "") { setHiddenClass("hidden") };
+        if (hiddenClass === "hidden") { setHiddenClass("") };
+    }
+
     return (
         <nav className="relative container p-6 mx-auto">
             <div className="flex items-center justify-between">
@@ -20,24 +31,23 @@ const Navbar = () => {
                 </div>
 
 
-                <MyButton text="Log In" to="/register/login" className="hidden md:block"/>
+                <MyButton text="Log In" to="/register/login" className="hidden md:block" />
 
                 {/* Hamburger Icon */}
-                <button id="menu-btn"
-                    className="block hamburger md:hidden focus:outline-none">
-                    <span id="hamburger-top"></span>
-                    <span id="hamburger-middle"></span>
-                    <span id="hamburger-bottom"></span>
+                <button id="menu-btn" onClick={toggleMenu} className="block open hamburger md:hidden focus:outline-none">
+                    <img src={HamburgerIcon} className="w-6"></img>
                 </button>
 
 
             </div>
 
-            <div className="md:hidden">
-                <div className="flex flex-col items-center">
-                    <NavLink to="/" className=" hover:text-darkGrayishBlue">Home</NavLink>
-                    <NavLink to="/about-us" className="hover:text-darkGrayishBlue">About us</NavLink>
-                    <NavLink to="/register/login" className="hover:text-darkGrayishBlue">Login</NavLink>
+            <div id="mobile-menu" className={hiddenClass + " md:hidden bg-veryLightGray"} >
+                <div className="flex self-end flex-col items-center
+                font-bold py-8 mt-10 space-y-6 
+                sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/about-us">About us</NavLink>
+                    <NavLink to="/register/login">Login</NavLink>
                 </div>
             </div>
         </nav>
