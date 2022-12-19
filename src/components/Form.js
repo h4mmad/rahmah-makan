@@ -1,6 +1,3 @@
-import MyButton from "./MyButton";
-import Pattern from "../images/pattern.svg";
-import Header from "./Header";
 import { Link, Outlet } from "react-router-dom";
 import GoogleIcon from "../images/google-icon.png";
 
