@@ -1,10 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import MyButton from "./MyButton";
-import Logo from "../images/logo-3.png"
+
 
 const Navbar = () => {
 
-    const activeClassName = "border-b-4 border-darkGreen";
     return (
         <nav className="relative container p-6 mx-auto">
             <div className="flex items-center justify-between">

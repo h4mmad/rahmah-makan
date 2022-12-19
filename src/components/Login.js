@@ -12,7 +12,7 @@ const Login = () => {
 
                 <Link className="p-3 text-white text-center px-6 pt-2 w-100 bg-darkGreen w-full rounded-lg mt-5 font-bold">Log In</Link>
             </form>
-            <p className="mt-10">Don't have an account? <Link to="/register/sign-up">Sign Up</Link></p>
+            <p className="mt-10">Don't have an account? <Link to="/register/sign-up" className="font-bold">Sign Up</Link></p>
         </>
     );
 

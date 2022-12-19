@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
 
-export default () =>{
-    return(
+const WithoutNav = () => {
+    return (
         <>
             <Outlet></Outlet>
         </>
     );
-} 
+}
 
+export default WithoutNav;
