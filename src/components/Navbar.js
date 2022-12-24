@@ -35,7 +35,7 @@ const Navbar = () => {
 
                 {/* Hamburger Icon */}
                 <button id="menu-btn" onClick={toggleMenu} className="block open hamburger md:hidden focus:outline-none">
-                    <img src={HamburgerIcon} className="w-6"></img>
+                    <img src={HamburgerIcon} className="w-6" alt=""></img>
                 </button>
 
 
