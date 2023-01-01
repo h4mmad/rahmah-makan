@@ -27,6 +27,7 @@ const Navbar = () => {
                 <div className="hidden space-x-6 md:flex">
                     <NavLink to="/" className=" hover:text-darkGrayishBlue">Home</NavLink>
                     <NavLink to="/about-us" className="hover:text-darkGrayishBlue">About us</NavLink>
+                    <NavLink to="/donate" className="hover:text-darkGrayishBlue">Donate</NavLink>
                     {/* <NavLink to="/" className="hover:text-darkGrayishBlue">Register</NavLink> */}
                 </div>
 
@@ -35,7 +36,7 @@ const Navbar = () => {
 
                 {/* Hamburger Icon */}
                 <button id="menu-btn" onClick={toggleMenu} className="block open hamburger md:hidden focus:outline-none">
-                    <img src={HamburgerIcon} className="w-6"></img>
+                    <img src={HamburgerIcon} className="w-6" alt=""></img>
                 </button>
 
 
@@ -47,6 +48,7 @@ const Navbar = () => {
                 sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/about-us">About us</NavLink>
+                    <NavLink to="/donate">Donate</NavLink>
                     <NavLink to="/register/login">Login</NavLink>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import './App.css';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import AboutUs from './pages/AboutUs';
+import DonatePage from './pages/DonatePage';
 import HomePage from './pages/HomePage';
 import Register from './pages/Register';
 import WithNav from './pages/WithNav';
@@ -20,7 +21,8 @@ function App() {
         </Route>
         <Route element={<WithNav/>}>
           <Route path="/" element={<HomePage/>}/>
-          <Route path="/about-us" element={<AboutUs/>}/>          
+          <Route path="/about-us" element={<AboutUs/>}/> 
+          <Route path="/donate" element={<DonatePage/>}/>          
         </Route>
       </Routes>
 

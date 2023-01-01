@@ -15,7 +15,7 @@ const Hero = () => {
                         fridges located across Penang
                     </p>
                     <div className="flex justify-center md:justify-start">
-                        <MyButton text="Get Started"></MyButton>
+                        <MyButton text="Donate Now" to="donate"></MyButton>
                     </div>
                 </div>
 
