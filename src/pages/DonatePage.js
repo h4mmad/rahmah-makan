@@ -12,8 +12,6 @@ const DonatePage = () => {
 
             <div className="rounded-lg w-80 text-center p-2 mt-10 hover:bg-veryLightGray border border-darkGreen">
                 <p>{fridgeInfo.name}</p>
-                <p>{fridgeInfo.coordinates.lat}</p>
-                <p>{fridgeInfo.coordinates.lng}</p>
             </div>
 
 
