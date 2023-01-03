@@ -8,8 +8,6 @@ const DonatePage = () => {
             
             <Map/>
 
-            
-
         </div>
 
     );

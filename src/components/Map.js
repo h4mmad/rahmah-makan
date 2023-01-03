@@ -17,7 +17,7 @@ const mapMarkers = markers.map((marker) => {
 })
 
   return (
-    <div style={{ height: "500px", width: "100%" , borderRadius: "100%", position: "relative"}}>
+    <div style={{ height: "400px", width: "100%" , borderRadius: "100%", position: "relative"}}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyDOvs1mDjda5i-chLsSimeVBGucp-O8ZTE" }}
         defaultCenter={center}
@@ -32,7 +32,7 @@ const mapMarkers = markers.map((marker) => {
 
         displaytext &&
       
-      <div style={{color: "white", backgroundColor: "rgba(0,0,0,0.5)", position: "absolute", top: "50px", left: "50px",
+      <div style={{color: "white", backgroundColor: "rgba(0,0,0,0.5)", position: "absolute", top: "20px", left: "20px",
       padding: "1rem",
       borderRadius: "10px"
 
