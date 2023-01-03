@@ -2,22 +2,44 @@ import { markers, center } from "../data/fridges";
 import GoogleMapReact from "google-map-react";
 import Marker from "./Marker";
 import { useState } from "react";
+import InfoBox from "./InfoBox";
 
-const Map = () => {
+const Map = ({setServerData}) => {
 
 const [displaytext, setDisplaytext] = useState(null);
+ 
+
+  async function sendRequest (){
+      try{
+        console.log('req sent');
+        let req = await fetch("http://localhost:5000");
+        const res =  await req.text();
+        setServerData(res);
+        console.log(res);
+      }
+      catch(error){
+        console.log(error);
+      }
+      
   
+  }
+
+
+
+
+
+
 const mapMarkers = markers.map((marker) => {
     return(
         <Marker text={marker.name}
-        onClick={()=>setDisplaytext(marker)}
+        onClick={async()=>{setDisplaytext(marker); sendRequest()}}
         lat={marker.coordinates.lat}
         lng={marker.coordinates.lng}/>
     );
 })
 
   return (
-    <div style={{ height: "400px", width: "100%" , borderRadius: "100%", position: "relative"}}>
+    <div className="relative w-full h-96">
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyDOvs1mDjda5i-chLsSimeVBGucp-O8ZTE" }}
         defaultCenter={center}
@@ -28,21 +50,8 @@ const mapMarkers = markers.map((marker) => {
 
       </GoogleMapReact>
 
-      {
+      { displaytext && <InfoBox displaytext={displaytext}/>}
 
-        displaytext &&
-      
-      <div style={{color: "white", backgroundColor: "rgba(0,0,0,0.5)", position: "absolute", top: "20px", left: "20px",
-      padding: "1rem",
-      borderRadius: "10px"
-
-        }}>
-        
-        <h3>{displaytext.name}</h3>
-        <h4>{displaytext.address}</h4>
-      </div>
-
-    }
     </div>
   );
 };
