@@ -1,6 +1,7 @@
 import Hazem from "../images/hazem.jpeg"
 import Hammad from "../images/hammad.jpg"
 import Abdelnasser from "../images/abdelnasser.jpg"
+import Ali from "../images/ali.jpeg"
 
 const Team = () => {
     return (
@@ -20,7 +21,7 @@ const Team = () => {
                         <h5 className="text-lg font-bold">Hazem</h5>
                     </div>
                     <div className="flex flex-col items-center p-6 mt-5 md:mt-0 space-y-6 md:w-1/4 bg-veryLightGray">
-                        <img src="" className="rounded-full -mt-14 border-4 border-darkGreen md:w-full  sm:w-1/2" alt="" />
+                        <img src={Ali} className="rounded-full -mt-14 border-4 border-darkGreen md:w-full  sm:w-1/2" alt="" />
                         <h5 className="text-lg font-bold">Ali</h5>
                     </div>
                     <div className="flex flex-col items-center p-6 mt-5 md:mt-0 space-y-6 md:w-1/4 bg-veryLightGray">

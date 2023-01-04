@@ -12,7 +12,7 @@ const [displaytext, setDisplaytext] = useState(null);
   async function sendRequest (){
       try{
         console.log('req sent');
-        let req = await fetch("http://localhost:5000");
+        let req = await fetch("http://localhost:5000/api/fridges");
         const res =  await req.text();
         setServerData(res);
         console.log(res);
