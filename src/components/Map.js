@@ -1,42 +1,7 @@
-import { markers, center } from "../data/fridges";
 import GoogleMapReact from "google-map-react";
-import Marker from "./Marker";
-import { useState } from "react";
 import InfoBox from "./InfoBox";
 
-const Map = ({setServerData}) => {
-
-const [displaytext, setDisplaytext] = useState(null);
- 
-
-  async function sendRequest (){
-      try{
-        console.log('req sent');
-        let req = await fetch("http://localhost:5000/api/fridges");
-        const res =  await req.text();
-        setServerData(res);
-        console.log(res);
-      }
-      catch(error){
-        console.log(error);
-      }
-      
-  
-  }
-
-
-
-
-
-
-const mapMarkers = markers.map((marker) => {
-    return(
-        <Marker text={marker.name}
-        onClick={async()=>{setDisplaytext(marker); sendRequest()}}
-        lat={marker.coordinates.lat}
-        lng={marker.coordinates.lng}/>
-    );
-})
+const Map = ({mapMarkers, center, displayText}) => {
 
   return (
     <div className="relative w-full h-96">
@@ -50,7 +15,7 @@ const mapMarkers = markers.map((marker) => {
 
       </GoogleMapReact>
 
-      { displaytext && <InfoBox displaytext={displaytext}/>}
+      { displayText && <InfoBox displayText={displayText}/>}
 
     </div>
   );

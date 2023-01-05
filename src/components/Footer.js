@@ -19,14 +19,9 @@ const Footer = () => {
                     <div className="flex flex-col space-y-3 text-white">
                         <Link to="/" className="text-white hover:text-darkGreen">Home</Link>
                         <Link to="/about-us" className="text-white hover:text-darkGreen">About Us</Link>
-                        <Link to="/about-us" className="text-white hover:text-darkGreen">About Us</Link>
+                        <Link to="/donate" className="text-white hover:text-darkGreen">Donate</Link>
 
 
-                    </div>
-                    <div className="flex flex-col space-y-3 text-white">
-                        <Link to="/" className="text-white">Home</Link>
-                        <Link to="/about-us" className="text-white hover:text-darkGreen">About Us</Link>
-                        <Link to="/about-us" className="text-white hover:text-darkGreen">About Us</Link>
                     </div>
                 </div>
 

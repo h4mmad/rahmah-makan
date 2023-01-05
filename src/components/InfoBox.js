@@ -1,4 +1,4 @@
-const InfoBox = ({displaytext}) => {
+const InfoBox = ({displayText}) => {
   return (
     <div
       style={{
@@ -11,8 +11,8 @@ const InfoBox = ({displaytext}) => {
         borderRadius: "10px",
       }}
     >
-      <h3>{displaytext.name}</h3>
-      <h4>{displaytext.address}</h4>
+      <h3 className="font-bold text-darkGreen">{displayText.name}</h3>
+      <h4>{displayText.address}</h4>
     </div>
   );
 };
