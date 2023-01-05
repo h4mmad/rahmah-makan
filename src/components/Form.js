@@ -14,7 +14,7 @@ const Form = () => {
                 </Link>
 
             </div>
-            <div className="container flex flex-col items-center mx-auto px-6 mt-32">
+            <div className="container flex flex-col items-center mx-auto px-6 mt-28">
 
                 <h2 className="font-bold text-veryDarkBlue text-3xl">
                 {location.pathname === "/register/login"? "Log in to your account": "Create your account."}
