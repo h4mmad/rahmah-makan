@@ -6,12 +6,13 @@ const StatusBox = ({ displayText }) => {
       <h2>Name: {displayText.name}</h2>
       <h2>Location: {displayText.address}</h2>
 
-      <div className="p-2 border-2 active:bg-darkGreen active:text-white border-darkGreen rounded-2xl flex items-center justify-center space-x-2 md:hidden">
-        <a href={displayText.googleMapsURL}>
+      <a href={displayText.googleMapsURL}>
+        <div className="p-2 border-2 active:bg-darkGreen active:text-white border-darkGreen rounded-2xl flex items-center justify-center space-x-2 md:hidden">
           <img className="w-12" src={MapsIcon} alt="" />
-        </a>
-        <h4>Open with Google Maps</h4>
-      </div>
+
+          <h4>Open with Google Maps</h4>
+        </div>
+      </a>
     </div>
   );
 };
