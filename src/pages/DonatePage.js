@@ -52,7 +52,7 @@ const DonatePage = () => {
 
       <div className="flex flex-col md:flex-row mt-5 md:space-x-5">
 
-        { displayText && <img src={QRCode} style={{ width: "12rem" }} className="border rounded-lg border-darkGreen hidden md:block" alt=""/>}
+        { displayText && <img src={QRCode} style={{ width: "12rem" }} className="border-2 rounded-lg border-darkGreen hidden md:block" alt=""/>}
         { displayText && <StatusBox displayText={displayText}/>}
         { displayText && <GoogleMapsButton displayText={displayText}/>}
         
