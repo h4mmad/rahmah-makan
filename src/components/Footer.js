@@ -16,12 +16,10 @@ const Footer = () => {
                 </div>
 
                 <div className="flex justify-around space-x-32">
-                    <div className="flex flex-col space-y-3 text-white">
+                    <div className="flex flex-col space-y-3 text-white items-center">
                         <Link to="/" className="text-white hover:text-darkGreen">Home</Link>
                         <Link to="/about-us" className="text-white hover:text-darkGreen">About Us</Link>
                         <Link to="/donate" className="text-white hover:text-darkGreen">Donate</Link>
-
-
                     </div>
                 </div>
 

@@ -3,6 +3,8 @@ import Map from "../components/Map";
 import Marker from "../components/Marker";
 import StatusBox from "../components/StatusBox";
 import { markers, center } from "../data/fridges";
+import GoogleMapsButton from "../components/GoogleMapsButton";
+
 
 const DonatePage = () => {
   const [serverData, setServerData] = useState('server data');
@@ -50,8 +52,9 @@ const DonatePage = () => {
 
       <div className="flex flex-col md:flex-row mt-5 md:space-x-5">
 
-        { displayText && <img src={QRCode} style={{ width: "12rem" }} className="border-4 rounded-2xl border-darkGreen hidden md:block" alt=""/>}
+        { displayText && <img src={QRCode} style={{ width: "12rem" }} className="border rounded-lg border-darkGreen hidden md:block" alt=""/>}
         { displayText && <StatusBox displayText={displayText}/>}
+        { displayText && <GoogleMapsButton displayText={displayText}/>}
         
       </div>
     </div>
