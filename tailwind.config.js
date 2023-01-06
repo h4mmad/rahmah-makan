@@ -20,6 +20,7 @@ module.exports = {
         darkGreen: "rgb(93, 199, 115)",
         veryLightGray: 'hsl(0,0%, 98%)',
         myBlue : "#008DC9",
+        fullRed: "rgba(255, 0, 0, 0.7)"
       }
     },
   },

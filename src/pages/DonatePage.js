@@ -7,7 +7,7 @@ import GoogleMapsButton from "../components/GoogleMapsButton";
 
 
 const DonatePage = () => {
-  const [serverData, setServerData] = useState('server data');
+  const [serverData, setServerData] = useState(1);
 
   const [displayText, setDisplayText] = useState(null);
   const [QRCode, setQRCode] = useState(null);
@@ -52,8 +52,8 @@ const DonatePage = () => {
 
       <div className="flex flex-col md:flex-row mt-5 md:space-x-5">
 
-        { displayText && <img src={QRCode} style={{ width: "12rem" }} className="border-2 rounded-lg border-darkGreen hidden md:block" alt=""/>}
-        { displayText && <StatusBox displayText={displayText}/>}
+        { displayText && <img src={QRCode} style={{ width: "12rem" }} className="border-4 rounded-lg border-darkGreen hidden md:block" alt=""/>}
+        { displayText && <StatusBox usage={serverData}/>}
         { displayText && <GoogleMapsButton displayText={displayText}/>}
         
       </div>
