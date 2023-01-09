@@ -1,7 +1,6 @@
 import GoogleMapReact from "google-map-react";
-import InfoBox from "./InfoBox";
 
-const Map = ({mapMarkers, center, displayText}) => {
+const Map = ({mapMarkers, center}) => {
 
   return (
     <div className="relative w-full h-96">
@@ -15,7 +14,7 @@ const Map = ({mapMarkers, center, displayText}) => {
 
       </GoogleMapReact>
 
-      { displayText && <InfoBox displayText={displayText}/>}
+      
 
     </div>
   );

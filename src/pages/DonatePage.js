@@ -5,14 +5,14 @@ import StatusBox from "../components/StatusBox";
 import { markers, center } from "../data/fridges";
 import GoogleMapsButton from "../components/GoogleMapsButton";
 import StatusCircle from "../components/StatusCircle";
+import InfoBox from "../components/InfoBox";
 
 
 const DonatePage = () => {
   const [serverData, setServerData] = useState(1);
 
   const [displayText, setDisplayText] = useState(null);
-  const [QRCode, setQRCode] = useState(null);
-
+  
   async function sendRequest() {
     try {
       console.log("req sent");
@@ -32,7 +32,6 @@ const DonatePage = () => {
         text={marker.name}
         onClick={async () => {
           setDisplayText(marker);
-          setQRCode(marker.qrCodeURL);
           sendRequest();
         }}
         lat={marker.coordinates.lat}
@@ -51,10 +50,10 @@ const DonatePage = () => {
         displayText={displayText}
       />
 
-      <div className="flex flex-col md:flex-row items-center justify-around md:space-x-8 mt-4 md:mt-8">
+      <div className="flex flex-col md:flex-row items-center mt-4 md:mt-8 justify-between">
 
-        { displayText && <img src={QRCode} style={{ width: "12rem" }} className="border-4 rounded-lg border-darkGreen hidden md:block" alt=""/>}
         { displayText && <StatusBox usage={serverData}/>}
+        { displayText && <InfoBox displayText={displayText}/>}
         { displayText && <StatusCircle usage={serverData}/>}
 
         { displayText && <GoogleMapsButton displayText={displayText}/>}
