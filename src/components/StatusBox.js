@@ -8,13 +8,13 @@ const StatusBox = ({ usage }) => {
   useEffect(()=>{
     const colorClass =  () => {
       if(usage === 1){
-        setColorClassText('md:hidden font-bold text-center bg-darkGreen p-2 rounded-lg');
+        setColorClassText('md:hidden font-bold text-center bg-darkGreen w-full p-2 rounded-lg');
       }
       if(usage === 2){
-        setColorClassText('md:hidden font-bold text-center bg-fullRed p-2 rounded-lg');
+        setColorClassText('md:hidden font-bold text-center bg-fullRed w-full p-2 rounded-lg');
       }
       if(usage === 3){
-        setColorClassText('md:hidden font-bold text-center bg-fullRed p-2 rounded-lg');
+        setColorClassText('md:hidden font-bold text-center bg-fullRed w-full p-2 rounded-lg');
       }
     }
     colorClass();
