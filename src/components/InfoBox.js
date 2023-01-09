@@ -1,10 +1,10 @@
 const InfoBox = ({ displayText }) => {
   return (
-    <div className="flex flex-row border-4 w-full border-googleMapsGrey rounded-lg md:mr-16">
+    <div className="flex flex-row w-full bg-googleMapsGrey rounded-lg md:mr-16">
       <img
         src={displayText.qrCodeURL}
         style={{ width: "12rem"}}
-        className="hidden md:block"
+        className="hidden md:block p-4"
         alt=""
       />
       <div className="p-4">
