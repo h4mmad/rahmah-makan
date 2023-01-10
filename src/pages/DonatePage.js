@@ -1,10 +1,9 @@
 import { useState } from "react";
 import Map from "../components/Map";
 import Marker from "../components/Marker";
-import StatusBox from "../components/StatusBox";
 import { markers, center } from "../data/fridges";
 import GoogleMapsButton from "../components/GoogleMapsButton";
-import StatusCircle from "../components/StatusCircle";
+import UsageStatus from "../components/UsageStatus";
 import InfoBox from "../components/InfoBox";
 import Spinner from "../components/Spinner";
 import AlertBox from "../components/AlertBox";
@@ -60,9 +59,8 @@ const DonatePage = () => {
 
       <div className="flex flex-col md:flex-row items-center mt-4 md:mt-8 justify-between">
 
-        { serverData && <StatusBox serverData={serverData}/>}
         { infoBoxData && <InfoBox infoBoxData={infoBoxData} serverData={serverData}/>}
-        {loading ? <Spinner/> : (serverData && <StatusCircle serverData={serverData}/>)}
+        {loading ? <Spinner/> : (serverData && <UsageStatus serverData={serverData}/>)}
         { infoBoxData && <GoogleMapsButton infoBoxData={infoBoxData}/>}
         
       </div>

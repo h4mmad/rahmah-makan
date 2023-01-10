@@ -39,13 +39,13 @@
   justify-content: center;
 }
 
-.circle-color-green{
+.green-color-status{
   background-color: var(--darkGreen);
 }
-.circle-color-yellow{
+.yellow-color-status{
   background-color: var(--warningYellow);
 }
-.circle-color-red{
+.red-color-status{
   background-color: var(--dangerRed);
 }
 
