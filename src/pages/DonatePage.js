@@ -6,23 +6,29 @@ import { markers, center } from "../data/fridges";
 import GoogleMapsButton from "../components/GoogleMapsButton";
 import StatusCircle from "../components/StatusCircle";
 import InfoBox from "../components/InfoBox";
+import Spinner from "../components/Spinner";
+import AlertBox from "../components/AlertBox";
 
 
 const DonatePage = () => {
-  const [serverData, setServerData] = useState(1);
 
-  const [displayText, setDisplayText] = useState(null);
+  const [serverData, setServerData] = useState(null);
+  const [infoBoxData, setInfoBoxData] = useState(null);
+  const [loading, setLoading] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
   
   async function sendRequest() {
     try {
-      console.log("req sent");
-      let req = await fetch("http://localhost:5000/api/fridges");
-      const res = await req.text();
-      setServerData(res);
-      console.log(res);
-      console.log(serverData);
+      setErrorMessage(null);
+      setLoading(true);
+      const request = await fetch("http://localhost:5000/api/fridges");
+      const response = await request.json();
+      setServerData(response);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       console.log(error);
+      setErrorMessage(String(error));
     }
   }
 
@@ -31,8 +37,8 @@ const DonatePage = () => {
       <Marker
         text={marker.name}
         onClick={async () => {
-          setDisplayText(marker);
           sendRequest();
+          setInfoBoxData(marker);
         }}
         lat={marker.coordinates.lat}
         lng={marker.coordinates.lng}
@@ -41,22 +47,22 @@ const DonatePage = () => {
   });
 
   return (
-    <div className="container mx-auto px-6 mt-10">
+    <div className="container mx-auto px-6 mt-10 mb-64">
+      {errorMessage ? <AlertBox text={errorMessage}/> : ''}
       <h1 className="text-xl mb-4">Select a fridge</h1>
       <Map
         setServerData={setServerData}
         center={center}
         mapMarkers={mapMarkers}
-        displayText={displayText}
+        infoBoxData={infoBoxData}
       />
 
       <div className="flex flex-col md:flex-row items-center mt-4 md:mt-8 justify-between">
 
-        { displayText && <StatusBox usage={serverData}/>}
-        { displayText && <InfoBox displayText={displayText}/>}
-        { displayText && <StatusCircle usage={serverData}/>}
-
-        { displayText && <GoogleMapsButton displayText={displayText}/>}
+        { serverData && <StatusBox serverData={serverData}/>}
+        { infoBoxData && <InfoBox infoBoxData={infoBoxData}/>}
+        {loading ? <Spinner/> : (serverData && <StatusCircle serverData={serverData}/>)}
+        { infoBoxData && <GoogleMapsButton infoBoxData={infoBoxData}/>}
         
       </div>
       

@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root{
+  --darkGreen: rgb(93, 199, 115);
+  --warningYellow: rgb(252, 186, 3);
+  --dangerRed: rgb(209, 29, 29);
+}
+
 .active {
   border-bottom: 2px;
-  border-color: rgb(93, 199, 115);
+  border-color: var(--darkGreen);
   border-style: solid;
 }
 
@@ -32,13 +39,13 @@
   justify-content: center;
 }
 
-.circle-green-color{
-  background-color: rgb(93, 199, 115);
+.circle-color-green{
+  background-color: var(--darkGreen);
+}
+.circle-color-yellow{
+  background-color: var(--warningYellow);
+}
+.circle-color-red{
+  background-color: var(--dangerRed);
 }
 
-.circle-red-color{
-  background-color: rgb(237, 28, 36);
-}
-.circle-yellow-color{
-  background-color: rgb(248, 153, 57);
-}

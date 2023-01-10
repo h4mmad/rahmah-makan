@@ -21,7 +21,8 @@ module.exports = {
         veryLightGray: 'hsl(0,0%, 98%)',
         myBlue : "#008DC9",
         fullRed: "rgba(255, 0, 0, 0.7)",
-        googleMapsGrey: "#e8e8e8"
+        googleMapsGrey: "#e8e8e8",
+        transparent: "rgba(0,0,0,0)"
       }
     },
   },
