@@ -23,6 +23,7 @@ const DonatePage = () => {
       setLoading(true);
       const request = await fetch("http://localhost:5000/api/fridges");
       const response = await request.json();
+      console.log(response);
       setServerData(response);
       setLoading(false);
     } catch (error) {
@@ -60,7 +61,7 @@ const DonatePage = () => {
       <div className="flex flex-col md:flex-row items-center mt-4 md:mt-8 justify-between">
 
         { serverData && <StatusBox serverData={serverData}/>}
-        { infoBoxData && <InfoBox infoBoxData={infoBoxData}/>}
+        { infoBoxData && <InfoBox infoBoxData={infoBoxData} serverData={serverData}/>}
         {loading ? <Spinner/> : (serverData && <StatusCircle serverData={serverData}/>)}
         { infoBoxData && <GoogleMapsButton infoBoxData={infoBoxData}/>}
         
