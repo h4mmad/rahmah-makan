@@ -1,14 +1,17 @@
 import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
 
 const User = ({userData, setUserData}) =>{
 
-    async function signOut(){
+    function mySignOut(){
         signOut(auth).then(() => {
-            // Sign-out successful.
             setUserData(null);
+            console.log('User signed out');
+            // Sign-out successful.
           }).catch((error) => {
             // An error happened.
             console.log(error);
+            
           });
     }
 
@@ -17,7 +20,7 @@ const User = ({userData, setUserData}) =>{
             {userData ? 
             <div>
                 <img className="rounded-full w-14 border-2 border-darkGreen" src={userData.photoURL} alt=""></img>
-                <button onClick={signOut}>Sign out</button>
+                <button onClick={mySignOut}>Sign out</button>
             </div> : <></>}
         </>
     );
