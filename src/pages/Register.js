@@ -1,9 +1,9 @@
 import Form from "../components/Form";
 
-const Register = () => {
+const Register = ({setUserData}) => {
     return(
         <>
-            <Form></Form>
+            <Form setUserData={setUserData}></Form>
         </>
     );
 

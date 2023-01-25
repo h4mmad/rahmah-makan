@@ -18,7 +18,7 @@ const SignUp = () => {
                 <input type="password" className="border border-darkGreen w-80 p-2 rounded-lg" placeholder="Password" />
 
 
-                <Link className="p-3 text-white text-center px-6 pt-2 w-100 bg-darkGreen w-full rounded-lg mt-5">Sign Up</Link>
+                <button className="p-3 text-white text-center px-6 pt-2 w-100 bg-darkGreen w-full rounded-lg mt-5">Sign Up</button>
 
 
             </form>
