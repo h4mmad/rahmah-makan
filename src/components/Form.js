@@ -2,9 +2,11 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import GoogleIcon from "../images/google-icon.png";
 import {signInWithPopup} from "firebase/auth";
 import {auth, provider} from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Form = ({setUserData}) => {
   const location = useLocation();
+  const navigate = useNavigate();
 
 async function authenticate(){
     console.log('Button clicked');
@@ -17,6 +19,7 @@ async function authenticate(){
     const user = result.user;
     console.log(user);
     setUserData(user);
+    navigate("/");
     
   }).catch((error) => {
     // Handle Errors here.
