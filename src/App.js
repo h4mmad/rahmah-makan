@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/Login';
@@ -9,10 +9,34 @@ import HomePage from './pages/HomePage';
 import Register from './pages/Register';
 import WithNav from './pages/WithNav';
 import WithoutNav from './pages/WithoutNav';
+import { auth } from './firebase';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 function App() {
 
   const [userData, setUserData] = useState(null);
+  useEffect(()=>{
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        console.log(uid);
+        setUserData(user);
+        // ...
+      } else {
+        // User is signed out
+        // ...
+        signOut(auth).then(() => {
+          // Sign-out successful.
+          setUserData(null);
+        }).catch((error) => {
+          // An error happened.
+          console.log(error);
+        });
+      }
+    });
+  }, [])
   return (
     <>
       <Routes>
