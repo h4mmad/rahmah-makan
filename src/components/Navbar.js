@@ -35,9 +35,7 @@ const Navbar = ({userData, setUserData}) => {
                 {userData ? <User userData={userData} setUserData={setUserData}/>: 
                 <MyButton text="Log In" to="/register/login" className="hidden md:block" />}
                 
-                {userData && <Link to="/" className="text-darkGreen text-xl baseline font-bold md:hidden">
-                    Rahmah Makan
-                </Link>}
+                
 
                 {/* Hamburger Icon */}
                 <button id="menu-btn" onClick={toggleMenu} className="block open hamburger md:hidden focus:outline-none">
