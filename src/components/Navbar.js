@@ -19,10 +19,14 @@ const Navbar = ({userData, setUserData}) => {
         <nav className="relative container p-6 mx-auto">
             <div className="flex items-center justify-between">
                 
-                {!userData &&
-                <Link to="/" className="text-darkGreen text-xl baseline font-bold">
+                
+                <Link to="/" className="text-darkGreen text-xl baseline font-bold hidden md:block">
+                    Rahmah Makan
+                </Link>
+                {!userData && <Link to="/" className="text-darkGreen text-xl baseline font-bold  md:hidden">
                     Rahmah Makan
                 </Link>}
+
                 
 
                 <div className="hidden space-x-6 md:flex">
