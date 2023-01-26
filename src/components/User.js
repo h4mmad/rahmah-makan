@@ -51,7 +51,7 @@ const User = ({ userData, setUserData }) => {
             <div
               ref={dropDownRef}
               className={
-                "border-darkGreen border-2 flex flex-col p-3 space-y-2 rounded-xl absolute right-0 bg-white z-50 shadow-lg"
+                "border-darkGreen border-2 flex flex-col p-3 space-y-2 rounded-xl absolute md:right-0 bg-white z-50 shadow-lg"
               }
             >
               <h1 className="font-bold text-xl">{userData.displayName}</h1>

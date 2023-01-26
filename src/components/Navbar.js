@@ -18,9 +18,11 @@ const Navbar = ({userData, setUserData}) => {
     return (
         <nav className="relative container p-6 mx-auto">
             <div className="flex items-center justify-between">
+                
+                {!userData &&
                 <Link to="/" className="text-darkGreen text-xl baseline font-bold">
                     Rahmah Makan
-                </Link>
+                </Link>}
                 
 
                 <div className="hidden space-x-6 md:flex">
@@ -33,6 +35,9 @@ const Navbar = ({userData, setUserData}) => {
                 {userData ? <User userData={userData} setUserData={setUserData}/>: 
                 <MyButton text="Log In" to="/register/login" className="hidden md:block" />}
                 
+                {userData && <Link to="/" className="text-darkGreen text-xl baseline font-bold md:hidden">
+                    Rahmah Makan
+                </Link>}
 
                 {/* Hamburger Icon */}
                 <button id="menu-btn" onClick={toggleMenu} className="block open hamburger md:hidden focus:outline-none">
@@ -49,7 +54,7 @@ const Navbar = ({userData, setUserData}) => {
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/about-us">About us</NavLink>
                     <NavLink to="/donate">Donate</NavLink>
-                    <NavLink to="/register/login">Login</NavLink>
+                    {!userData && <NavLink to="/register/login">Login</NavLink>}
                 </div>
             </div>
         </nav>
