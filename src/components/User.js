@@ -1,7 +1,12 @@
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
+import { useEffect, useRef, useState } from "react";
 
 const User = ({ userData, setUserData }) => {
+  const [show, setShow] = useState(false);
+  const dropDownRef = useRef();
+  const picRef = useRef();
+
   function mySignOut() {
     signOut(auth)
       .then(() => {
@@ -15,20 +20,51 @@ const User = ({ userData, setUserData }) => {
       });
   }
 
+  useEffect(() => {
+    const closeDropDown = (e) => {
+      if(e.target !== dropDownRef.current && e.target !== picRef.current){
+        setShow(false);
+      }
+    };
+    
+
+    document.addEventListener("click", closeDropDown);
+
+
+    return () => document.removeEventListener("click", closeDropDown);
+  }, []);
+
   return (
     <>
       {userData ? (
-        <div className="flex flex-row">
-          <div class="tooltip">
-            <img
-              className="rounded-full w-14 border-2 border-darkGreen"
-              src={userData.photoURL}
-              alt=""
-            ></img>
-            <span class="tooltipcontent">
-              <button onClick={mySignOut}>Sign out</button>
-            </span>
-          </div>
+        <div className="relative">
+          <img
+            ref={picRef}
+            className="rounded-full w-14 border-2 border-darkGreen cursor-pointer"
+            src={userData.photoURL}
+            alt=""
+            referrerPolicy="no-referrer"
+            onClick={() => setShow(!show)}
+          ></img>
+
+          {show && (
+            <div
+              ref={dropDownRef}
+              className={
+                "border-darkGreen border-2 flex flex-col p-3 space-y-2 rounded-xl absolute right-0 bg-white z-50"
+              }
+            >
+              <h1 className="font-bold text-xl">{userData.displayName}</h1>
+
+              <h3>{userData.email}</h3>
+              <button                
+                onClick={mySignOut}
+                className="p-2 text-white  bg-darkGreen rounded-full hover:bg-brightRedLight"
+              >
+                Sign out
+              </button>
+            </div>
+          )}
         </div>
       ) : (
         <></>
