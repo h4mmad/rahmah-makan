@@ -18,7 +18,7 @@ const SignUp = () => {
                 <input type="password" className="border border-darkGreen w-80 p-2 rounded-lg" placeholder="Password" />
 
 
-                <button className="p-3 text-white text-center px-6 pt-2 w-100 bg-darkGreen w-full rounded-lg mt-5">Sign Up</button>
+                <button onClick={(e)=>e.preventDefault()} className="p-3 text-white text-center px-6 pt-2 w-100 bg-darkGreen w-full rounded-lg mt-5">Sign Up</button>
 
 
             </form>
