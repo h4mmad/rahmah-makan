@@ -4,7 +4,7 @@ import {signInWithPopup} from "firebase/auth";
 import {auth, provider} from "../firebase";
 import { useNavigate } from "react-router-dom";
 
-const Form = ({setUserData}) => {
+const Form = ({setUserData, goTo}) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -19,8 +19,9 @@ async function authenticate(){
     const user = result.user;
     console.log(user);
     setUserData(user);
-    navigate("/");
-    
+    console.log(goTo);
+    navigate(goTo);
+  
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;

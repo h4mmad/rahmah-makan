@@ -1,9 +1,9 @@
 import Form from "../components/Form";
 
-const Register = ({setUserData}) => {
+const Register = ({setUserData, goTo}) => {
     return(
         <>
-            <Form setUserData={setUserData}></Form>
+            <Form setUserData={setUserData} goTo={goTo}></Form>
         </>
     );
 

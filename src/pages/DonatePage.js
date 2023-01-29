@@ -35,6 +35,7 @@ const DonatePage = () => {
   const mapMarkers = markers.map((marker) => {
     return (
       <Marker
+        key={marker.name}
         text={marker.name}
         onClick={async () => {
           sendRequest();

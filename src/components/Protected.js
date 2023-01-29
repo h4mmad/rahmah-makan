@@ -1,10 +1,18 @@
-import { Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { Navigate, useLocation } from "react-router-dom";
 
-const Protected = ({userData, children}) => {
-    if(userData){
+const Protected = ({ userData, children, setGoTo }) => {
+  
+    let location = useLocation();
+
+    useEffect(()=>{ 
+        setGoTo(location.pathname);
+    })
+
+    if (userData) {
         return children;
     }
-    return <Navigate to="/register/login"/>
-}
+  return <Navigate to="/register/login" />;
+};
 
 export default Protected;
