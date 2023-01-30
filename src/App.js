@@ -41,7 +41,7 @@ function App() {
         >
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/donate" element={<Protected userData={userData} setGoTo={setGoTo}><DonatePage/></Protected>}/>
+          <Route path="/donate" element={<DonatePage/>}/>
         </Route>
       </Routes>
     </>

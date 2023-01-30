@@ -7,15 +7,14 @@ import UsageStatus from "../components/UsageStatus";
 import InfoBox from "../components/InfoBox";
 import Spinner from "../components/Spinner";
 import AlertBox from "../components/AlertBox";
-
+import DonationDetails from "../components/DonationDetails";
 
 const DonatePage = () => {
-
   const [serverData, setServerData] = useState(null);
   const [infoBoxData, setInfoBoxData] = useState(null);
   const [loading, setLoading] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
-  
+
   async function sendRequest() {
     try {
       setErrorMessage(null);
@@ -48,25 +47,32 @@ const DonatePage = () => {
   });
 
   return (
-    <div className="container mx-auto px-6 mt-10 mb-64">
-      {errorMessage ? <AlertBox text={errorMessage}/> : ''}
-      <h1 className="text-xl mb-4">Select a fridge</h1>
-      <Map
-        setServerData={setServerData}
-        center={center}
-        mapMarkers={mapMarkers}
-        infoBoxData={infoBoxData}
-      />
+    <>
+      <div className="container mx-auto px-6 mt-10">
+        {errorMessage ? <AlertBox text={errorMessage} /> : ""}
+        <h1 className="text-xl mb-4">Select a fridge</h1>
+        <Map
+          setServerData={setServerData}
+          center={center}
+          mapMarkers={mapMarkers}
+          infoBoxData={infoBoxData}
+        />
 
-      <div className="flex flex-col md:flex-row items-center mt-4 md:mt-8 justify-between">
+        <div className="flex flex-col md:flex-row items-center mt-4 md:mt-8 justify-between">
+          {infoBoxData && (
+            <InfoBox infoBoxData={infoBoxData} serverData={serverData} />
+          )}
+          {loading ? (
+            <Spinner />
+          ) : (
+            serverData && <UsageStatus serverData={serverData} />
+          )}
+          {infoBoxData && <GoogleMapsButton infoBoxData={infoBoxData} />}
+        </div>
 
-        { infoBoxData && <InfoBox infoBoxData={infoBoxData} serverData={serverData}/>}
-        {loading ? <Spinner/> : (serverData && <UsageStatus serverData={serverData}/>)}
-        { infoBoxData && <GoogleMapsButton infoBoxData={infoBoxData}/>}
-        
+        {infoBoxData && serverData ? <DonationDetails infoBoxData={infoBoxData}/> : <></>}
       </div>
-      
-    </div>
+    </>
   );
 };
 

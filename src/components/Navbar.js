@@ -32,7 +32,7 @@ const Navbar = ({userData, setUserData}) => {
                 <div className="hidden space-x-6 md:flex">
                     <NavLink to="/" className=" hover:text-darkGrayishBlue">Home</NavLink>
                     <NavLink to="/about-us" className="hover:text-darkGrayishBlue">About us</NavLink>
-                    <NavLink to="/donate" className="hover:text-darkGrayishBlue">Donate</NavLink>
+                    <NavLink to="/donate" className="hover:text-darkGrayishBlue">Fridges</NavLink>
                     {/* <NavLink to="/" className="hover:text-darkGrayishBlue">Register</NavLink> */}
                 </div>
 
@@ -55,7 +55,7 @@ const Navbar = ({userData, setUserData}) => {
                 sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/about-us">About us</NavLink>
-                    <NavLink to="/donate">Donate</NavLink>
+                    <NavLink to="/donate">Fridges</NavLink>
                     {!userData && <NavLink to="/register/login">Login</NavLink>}
                 </div>
             </div>
