@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const DonationDetails = ({ infoBoxData, redirectTo }) => {
+const DonationDetails = ({ infoBoxData, redirectTo, userData}) => {
   const [active, setActive] = useState(false);
 
 

@@ -15,8 +15,8 @@ import { auth } from "./firebase";
 
 function App() {
   const [userData, setUserData] = useState(null);
-  const [goTo, setGoTo] = useState(null);
-  console.log(setGoTo)
+
+  
   onAuthStateChanged(auth, (user) => {
     if (user) {
       setUserData(user);
@@ -31,7 +31,7 @@ function App() {
         <Route element={<WithoutNav />}>
           <Route
             path="/register"
-            element={<Register setUserData={setUserData} goTo={goTo}/>}
+            element={<Register setUserData={setUserData}/>}
           >
             <Route path="/register/login" element={<Login />} />
             <Route path="/register/sign-up" element={<SignUp />} />
@@ -42,7 +42,7 @@ function App() {
         >
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/donate" element={<DonatePage setGoTo={setGoTo} userData={userData}/>}/>
+          <Route path="/donate" element={<DonatePage userData={userData}/>}/>
         </Route>
       </Routes>
     </>

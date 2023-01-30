@@ -80,8 +80,8 @@ const DonatePage = ({ setGoTo, userData }) => {
         </div>
 
         <div className="mt-3 flex flex-col md:flex-row">
-          {infoBoxData ? <DonationDetails infoBoxData={infoBoxData} redirectTo={redirectTo}/> : <></>}
-          {infoBoxData ? <ReportIssue redirectTo={redirectTo}/> : <></>}
+          {infoBoxData ? <DonationDetails userData={userData} infoBoxData={infoBoxData} redirectTo={redirectTo} setGoTo={setGoTo}/> : <></>}
+          {infoBoxData ? <ReportIssue userData={userData} redirectTo={redirectTo} setGoTo={setGoTo}/> : <></>}
         </div>
 
       </div>

@@ -1,19 +1,22 @@
 import { useState } from "react";
 
-const ReportIssue = ({redirectTo, userData}) => {
+const ReportIssue = ({ redirectTo, userData }) => {
   const [active, setActive] = useState(false);
 
+
   function toggleModal(e) {
-    redirectTo()
+    redirectTo();
     setActive(!active);
   }
 
   return (
     <>
-      <button onClick={toggleModal} className="border p-2 text-white font-bold bg-red-600 rounded-md mt-3 hover:bg-red-500">
+      <button
+        onClick={toggleModal}
+        className="border p-2 text-white font-bold bg-red-600 rounded-md mt-3 hover:bg-red-500"
+      >
         Report issue
       </button>
-     
 
       {active ? (
         <>
@@ -33,11 +36,13 @@ const ReportIssue = ({redirectTo, userData}) => {
             </span>
 
             <form className="flex flex-col  p-3 m-auto">
-              <h3 className="text-xl md:text-left">
-                Report Issue
-              </h3>
-              <textarea rows="5" cols="50" className="mt-2 border rounded-md border-red-500 p-2"></textarea>
-             
+              <h3 className="text-xl md:text-left">Report Issue</h3>
+              <textarea
+                rows="5"
+                cols="50"
+                className="mt-2 border rounded-md border-red-500 p-2"
+              ></textarea>
+
               <button
                 className="border p-2 text-white font-bold bg-red-500  rounded-md mt-3 hover:bg-brightRedLight"
                 onClick={(e) => e.preventDefault()}
@@ -50,17 +55,6 @@ const ReportIssue = ({redirectTo, userData}) => {
       ) : (
         <></>
       )}
-
-
-
-
-
-
-
-
-
-
-
     </>
   );
 };

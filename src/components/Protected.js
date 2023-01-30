@@ -7,9 +7,11 @@ const Protected = ({ userData, children, setGoTo }) => {
 
     useEffect(()=>{ 
         setGoTo(location.pathname);
+        console.log(location.pathname);
     })
 
     if (userData) {
+        console.log(location.pathname);
         return children;
     }
   return <Navigate to="/register/login" />;
