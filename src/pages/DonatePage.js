@@ -70,7 +70,7 @@ const DonatePage = () => {
           {infoBoxData && <GoogleMapsButton infoBoxData={infoBoxData} />}
         </div>
 
-        {infoBoxData && serverData ? <DonationDetails infoBoxData={infoBoxData}/> : <></>}
+        {infoBoxData ? <DonationDetails infoBoxData={infoBoxData}/> : <></>}
       </div>
     </>
   );

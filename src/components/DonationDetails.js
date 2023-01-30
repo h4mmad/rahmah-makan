@@ -19,7 +19,7 @@ const DonationDetails = ({ infoBoxData }) => {
       {active ? (
         <>
           <div
-            style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+            style={{ backgroundColor: "rgba(0,0,0,0.7)" }}
             className="w-100 h-screen left-0 right-0 fixed top-0"
           ></div>
 

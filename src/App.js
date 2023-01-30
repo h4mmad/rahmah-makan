@@ -11,11 +11,12 @@ import WithNav from "./pages/WithNav";
 import WithoutNav from "./pages/WithoutNav";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
-import Protected from "./components/Protected";
+// import Protected from "./components/Protected";
 
 function App() {
   const [userData, setUserData] = useState(null);
   const [goTo, setGoTo] = useState(null);
+  console.log(setGoTo);
   onAuthStateChanged(auth, (user) => {
     if (user) {
       setUserData(user);
