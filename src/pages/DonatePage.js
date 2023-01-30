@@ -8,12 +8,15 @@ import InfoBox from "../components/InfoBox";
 import Spinner from "../components/Spinner";
 import AlertBox from "../components/AlertBox";
 import DonationDetails from "../components/DonationDetails";
+import ReportIssue from "../components/ReportIssue";
+import { useNavigate } from "react-router-dom";
 
-const DonatePage = () => {
+const DonatePage = ({ setGoTo, userData }) => {
   const [serverData, setServerData] = useState(null);
   const [infoBoxData, setInfoBoxData] = useState(null);
   const [loading, setLoading] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
 
   async function sendRequest() {
     try {
@@ -46,6 +49,12 @@ const DonatePage = () => {
     );
   });
 
+  function redirectTo(){
+    if(!userData){
+      navigate('/register/login')
+    }
+  }
+
   return (
     <>
       <div className="container mx-auto px-6 mt-10">
@@ -70,7 +79,11 @@ const DonatePage = () => {
           {infoBoxData && <GoogleMapsButton infoBoxData={infoBoxData} />}
         </div>
 
-        {infoBoxData ? <DonationDetails infoBoxData={infoBoxData}/> : <></>}
+        <div className="mt-3 flex flex-col md:flex-row">
+          {infoBoxData ? <DonationDetails infoBoxData={infoBoxData} redirectTo={redirectTo}/> : <></>}
+          {infoBoxData ? <ReportIssue redirectTo={redirectTo}/> : <></>}
+        </div>
+
       </div>
     </>
   );

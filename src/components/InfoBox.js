@@ -1,6 +1,6 @@
 const InfoBox = ({ infoBoxData, serverData }) => {
   return (
-    <div className="flex flex-row w-full bg-googleMapsGrey rounded-lg md:mr-16">
+    <div className="flex flex-row w-full bg-googleMapsGrey rounded-lg">
       <img
         src={infoBoxData.qrCodeURL}
         style={{ width: "12rem" }}

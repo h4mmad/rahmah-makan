@@ -1,22 +1,19 @@
 import { useState } from "react";
 
-const DonationDetails = ({ infoBoxData, redirectTo }) => {
+const ReportIssue = ({redirectTo, userData}) => {
   const [active, setActive] = useState(false);
 
-
   function toggleModal(e) {
-    redirectTo();
+    redirectTo()
     setActive(!active);
   }
 
   return (
     <>
-      <button
-        onClick={toggleModal}
-        className="border p-2 text-white font-bold bg-blue-600 rounded-md mt-3 hover:bg-blue-500"
-      >
-        Enter donation details
+      <button onClick={toggleModal} className="border p-2 text-white font-bold bg-red-600 rounded-md mt-3 hover:bg-red-500">
+        Report issue
       </button>
+     
 
       {active ? (
         <>
@@ -37,28 +34,15 @@ const DonationDetails = ({ infoBoxData, redirectTo }) => {
 
             <form className="flex flex-col  p-3 m-auto">
               <h3 className="text-xl md:text-left">
-                You're donating to {infoBoxData.name}, please declare your items
+                Report Issue
               </h3>
-              <input
-                placeholder="Food type"
-                type="text"
-                className="p-2 rounded-md border mt-3  border-blue-600"
-              />
-              <input
-                placeholder="Amount"
-                type="text"
-                className="p-2 rounded-md border mt-3 border-blue-600"
-              />
-              <label className="mt-9">Use by:</label>
-              <input
-                type="date"
-                className="p-2 rounded-md border border-blue-600"
-              />
+              <textarea rows="5" cols="50" className="mt-2 border rounded-md border-red-500 p-2"></textarea>
+             
               <button
-                className="border p-2 text-white font-bold bg-blue-600 rounded-md mt-3 hover:bg-blue-500"
+                className="border p-2 text-white font-bold bg-red-500  rounded-md mt-3 hover:bg-brightRedLight"
                 onClick={(e) => e.preventDefault()}
               >
-                Submit
+                Report
               </button>
             </form>
           </div>
@@ -66,7 +50,19 @@ const DonationDetails = ({ infoBoxData, redirectTo }) => {
       ) : (
         <></>
       )}
+
+
+
+
+
+
+
+
+
+
+
     </>
   );
 };
-export default DonationDetails;
+
+export default ReportIssue;

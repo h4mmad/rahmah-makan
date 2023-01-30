@@ -26,7 +26,7 @@ const StatusCircle = ({ serverData }) => {
 
   return (
     <>
-      <div className="hidden md:block ">
+      <div className="hidden md:block ml-4">
         <div id="outer-circle" className={className}>
           <div id="inner-circle" className="text-xl font-bold">
             {message}
