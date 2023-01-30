@@ -33,6 +33,8 @@ const Navbar = ({userData, setUserData}) => {
                     <NavLink to="/" className=" hover:text-darkGrayishBlue">Home</NavLink>
                     <NavLink to="/about-us" className="hover:text-darkGrayishBlue">About us</NavLink>
                     <NavLink to="/donate" className="hover:text-darkGrayishBlue">Fridges</NavLink>
+                    <NavLink to="/admin" className="hover:text-darkGrayishBlue">Admin</NavLink> 
+                     
                     {/* <NavLink to="/" className="hover:text-darkGrayishBlue">Register</NavLink> */}
                 </div>
 
@@ -56,6 +58,7 @@ const Navbar = ({userData, setUserData}) => {
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/about-us">About us</NavLink>
                     <NavLink to="/donate">Fridges</NavLink>
+                    <NavLink to="/admin">Admin</NavLink>
                     {!userData && <NavLink to="/register/login">Login</NavLink>}
                 </div>
             </div>

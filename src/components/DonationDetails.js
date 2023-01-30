@@ -1,12 +1,54 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { getDatabase, ref, set } from "firebase/database";
 
-const DonationDetails = ({ infoBoxData, redirectTo, userData}) => {
+const DonationDetails = ({ infoBoxData, redirectTo, userData }) => {
   const [active, setActive] = useState(false);
-
+  const [foodType, setFoodType] = useState("");
+  const [amount, setAmount] = useState("");
+  const [useBy, setUseBy] = useState("");
+  const [message, setMessage] = useState(null);
 
   function toggleModal(e) {
     redirectTo();
     setActive(!active);
+  }
+
+  function foodTypeHandler(e) {
+    setFoodType(e.target.value);
+  }
+  function amountHandler(e) {
+    setAmount(e.target.value);
+  }
+  function useByHandler(e) {
+    setUseBy(e.target.value);
+  }
+  function submitHandler(e) {
+    e.preventDefault();
+    console.log(foodType, amount, useBy);
+
+    const db = getDatabase();
+    set(ref(db, "donations/" + uuidv4()), {
+      displayName: userData.displayName,
+      fridgeName: infoBoxData.name,
+      userID: userData.uid,
+      foodType: foodType,
+      amount: amount,
+      useBy: useBy,
+      createdAt: String(new Date())
+    })
+      .then(() => {
+        setMessage("Your details have been submitted successfully");
+        setAmount("");
+        setFoodType("");
+        setUseBy("");
+        console.log("data saved successfully");
+        setTimeout(()=>{setMessage('')}, 3000);
+      })
+      .catch((error) => {
+        setMessage(error);
+        console.log("write failed");
+      });
   }
 
   return (
@@ -35,31 +77,43 @@ const DonationDetails = ({ infoBoxData, redirectTo, userData}) => {
               &#x2715;
             </span>
 
-            <form className="flex flex-col  p-3 m-auto">
+            <form className="flex flex-col  p-3 m-auto" onSubmit={submitHandler}>
+            <p className="mt-3 text-green-600 font-bold">{message}</p>
               <h3 className="text-xl md:text-left">
                 You're donating to {infoBoxData.name}, please declare your items
               </h3>
               <input
+              required
                 placeholder="Food type"
+                value={foodType}
                 type="text"
                 className="p-2 rounded-md border mt-3  border-blue-600"
+                onChange={foodTypeHandler}
               />
               <input
+              required
                 placeholder="Amount"
                 type="text"
+                value={amount}
                 className="p-2 rounded-md border mt-3 border-blue-600"
+                onChange={amountHandler}
               />
               <label className="mt-9">Use by:</label>
               <input
+              required
+                value={useBy}
                 type="date"
                 className="p-2 rounded-md border border-blue-600"
+                onChange={useByHandler}
               />
               <button
                 className="border p-2 text-white font-bold bg-blue-600 rounded-md mt-3 hover:bg-blue-500"
-                onClick={(e) => e.preventDefault()}
+                
               >
                 Submit
               </button>
+
+
             </form>
           </div>
         </>

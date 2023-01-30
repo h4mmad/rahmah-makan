@@ -7,16 +7,17 @@ import AboutUs from "./pages/AboutUs";
 import DonatePage from "./pages/DonatePage";
 import HomePage from "./pages/HomePage";
 import Register from "./pages/Register";
+import Admin from "./pages/Admin";
 import WithNav from "./pages/WithNav";
 import WithoutNav from "./pages/WithoutNav";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
+
 // import Protected from "./components/Protected";
 
 function App() {
   const [userData, setUserData] = useState(null);
 
-  
   onAuthStateChanged(auth, (user) => {
     if (user) {
       setUserData(user);
@@ -31,7 +32,7 @@ function App() {
         <Route element={<WithoutNav />}>
           <Route
             path="/register"
-            element={<Register setUserData={setUserData}/>}
+            element={<Register setUserData={setUserData} />}
           >
             <Route path="/register/login" element={<Login />} />
             <Route path="/register/sign-up" element={<SignUp />} />
@@ -42,7 +43,8 @@ function App() {
         >
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/donate" element={<DonatePage userData={userData}/>}/>
+          <Route path="/donate" element={<DonatePage userData={userData} />} />
+          <Route path="/admin" element={<Admin userData={userData} />} />
         </Route>
       </Routes>
     </>
