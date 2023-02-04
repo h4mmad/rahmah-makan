@@ -64,7 +64,7 @@ const Admin = ({userData}) => {
     <div className="container mx-auto px-6 mt-10">
       {
 
-        (userData && userData.email === 'mohammedhammad07@gmail.com') &&
+        (userData && userData.email === 'mohammedhammad07@gmail.com') ?
         <div className="flex flex-col md:flex-row justify-between">
           <div className="">
             <div className="flex flex-row justify-between items-baseline">
@@ -99,6 +99,8 @@ const Admin = ({userData}) => {
               })}
           </div>
         </div>
+        :
+        <div className="flex flex-col items-center pb-32 pointer-events-none"><iframe title="goalkeeper-gif" src="https://giphy.com/embed/dpJX6BkwptfbclunyK" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p className="font-bold text-xl pt-4">You're not an admin</p></div>
       }
     </div>
   );
