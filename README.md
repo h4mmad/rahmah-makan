@@ -5,7 +5,7 @@ donate food to community fridges spread across Penang. Donors are able to check 
 
 Visit: https://rahmah-makan.netlify.app
 
-<img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E_SDG_logo_UN_emblem_square_trans_WEB.png" width="200">
+<img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E_SDG_logo_UN_emblem_square_trans_WEB.png" width="150">
 
 [Read more about UN's sustainable goals](https://sdgs.un.org/goals)
 
