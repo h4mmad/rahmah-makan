@@ -6,7 +6,7 @@ donate food to community fridges spread across Penang. Donors are able to check 
 
 ## Tech stack
 
-Frontend is built using React JS and Tailwind CSS, Firebase database is used to store donation details and issues. A Flask server is used to run the object detection module written in Python.
+Frontend is built using React JS and Tailwind CSS, Firebase database is used to store donation details and issues. A Flask server is used to run the object detection module written in Python. Google Maps API is used to display fridges
 
 <img src="https://raw.githubusercontent.com/h4mmad/rahmah-makan/main/src/images/Group%201.png" width="600">
 
