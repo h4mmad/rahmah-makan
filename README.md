@@ -1,19 +1,14 @@
-## Rahmah Makan
+# Rahmah Makan
 
 Based on one of United Nation's sustainable goals of eradicating hunger, Rahmah Makan is a web app that enables donors to 
 donate food to community fridges spread across Penang. Donors are able to check the capacity of fridges through an IoT camera module which detects objects in the fridges. Donors are then able to navigate to the fridges and place the food items.
+
 
 ## Tech stack
 
 Frontend is built using React JS and Tailwind CSS, Firebase database is used to store donation details and issues. A Flask server is used to run the object detection module written in Python.
 
-<div>
- <img src="https://www.datocms-assets.com/45470/1631110818-logo-react-js.png" width="200" height="auto" alt="react logo">
-<img src="https://tailwindcss.com/_next/static/media/tailwindcss-logotype.ed60a6f85c663923c4d6ee9d85f359cd.svg" width="200" height="auto" alt="tailwind css logo">
-<img src="https://www.gstatic.com/devrel-devsite/prod/vde5e97689c1d94fa683b9e5392f0f6b6562f68c8b527194cc7ca91d97bde649f/firebase/images/lockup.svg"  width="200" height="auto" alt="firebase logo">
 
-<img src="https://flask.palletsprojects.com/en/2.2.x/_images/flask-logo.png" width="200" height="auto" alt="flask logo">
- </div>
 
 ## System overview
 
