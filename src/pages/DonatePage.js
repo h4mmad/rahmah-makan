@@ -18,6 +18,12 @@ const DonatePage = ({ setGoTo, userData }) => {
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
 
+
+  // The sendRequest function requests the flask server for status of the fridge
+  // setServerData() is used to set the response from the server
+  // setLoading() is used to display a loding spinner while the data is being fetched
+  // setErrorMessage() is used to set error message incase fetching fails
+
   async function sendRequest() {
     try {
       setErrorMessage(null);
@@ -33,6 +39,13 @@ const DonatePage = ({ setGoTo, userData }) => {
       setErrorMessage(String(error));
     }
   }
+
+
+  // The coordinates of fridge markers is located in /src/data/fridges.js
+  // The data is structured as an array of objects
+  // mapMarkers variable is assigned an array of <Marker/> components after reading from the array
+  // longitude and latitude are set for each marker
+
 
   const mapMarkers = markers.map((marker) => {
     return (

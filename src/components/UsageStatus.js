@@ -6,6 +6,11 @@ const StatusCircle = ({ serverData }) => {
     "JSON response not meeting the requirements"
   );
 
+
+
+  // This hook depends on serverData
+  // setClassName is used to set the color of the status circle/rectangle based on usage
+
   useEffect(() => {
     if (serverData) {
       if (serverData.usage === "low") {

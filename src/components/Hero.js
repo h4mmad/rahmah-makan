@@ -10,7 +10,7 @@ const Hero = () => {
                     <h1 className="max-w-md text-4xl font-bold text-center md:text-5xl md:text-left">
                         Let's defeat hunger
                     </h1>
-                    <p className="max-w-sm text-center text-center text-darkGrayishBlue md:text-left">
+                    <p className="max-w-sm text-center text-darkGrayishBlue md:text-left">
                         Rahmah Makan helps the needy by allowing people to donate food to our many
                         fridges located across Penang
                     </p>
