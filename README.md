@@ -3,6 +3,15 @@
 Based on one of United Nation's sustainable goals of eradicating hunger, Rahmah Makan is a web app that enables donors to 
 donate food to community fridges spread across Penang. Donors are able to check the capacity of fridges through an IoT camera module which detects objects in the fridges. Donors are then able to navigate to the fridges and place the food items.
 
+Visit: https://rahmah-makan.netlify.app
+
+<img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E_SDG_logo_UN_emblem_square_trans_WEB.png" width="200">
+
+[Read more about UN's sustainable goals](https://sdgs.un.org/goals)
+
+
+---
+
 
 ## Tech stack
 
@@ -10,10 +19,14 @@ Frontend is built using React JS and Tailwind CSS, Firebase database is used to 
 
 <img src="https://raw.githubusercontent.com/h4mmad/rahmah-makan/main/src/images/Group%201.png" width="600">
 
+---
 
 ## System overview
 
 A user is able to check capacity of community fridges near them, to donate, they login using Firebase auth, and select a fridge. On fridge selection, a request is made to the flask server through an API which specifies the fridge number, the backend runs the object detection module, detects the number of items in the fridge and returns a response, as low, medium or high capacity usage. The user can they navigate to the fridge to donate using Google Maps which is integrated with the application.
+
+
+---
 
 ## User Interface
 
