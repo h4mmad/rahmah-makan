@@ -17,7 +17,8 @@ Visit: https://rahmah-makan.netlify.app
 
 Frontend is built using React JS and Tailwind CSS, Firebase database is used to store donation details and issues. A Flask server is used to run the object detection module written in Python. Google Maps API is used to display fridges on a map.
 
-<img src="https://raw.githubusercontent.com/h4mmad/rahmah-makan/main/src/images/Group%201.png" width="600">
+![image](https://user-images.githubusercontent.com/55020862/218325276-a8de19f2-29fc-47bf-a468-684e3d4c05c0.png)
+
 
 ---
 
